@@ -26,12 +26,10 @@ public class ArrayUtil {
 	 * @return the new length of the array
 	 */
 	public static <T> int push(T[] array, T... elements) {
-		int length = array.length;
-		for (T element: elements) 
-			array[++length] = element;
-
-		return length;
+		array = (T[]) Lists.newArrayList(array, elements).toArray(); // i really feel like i cheated on this one.
+		return array.length;
 	}
+
 
 	/**
 	 * 
